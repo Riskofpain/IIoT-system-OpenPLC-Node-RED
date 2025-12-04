@@ -1,0 +1,33 @@
+services:
+  openplc:
+    image: tuttas/openplc_v3
+    container_name: industrial_plc
+    restart: always
+    privileged: true
+    ports:
+      - "8080:8080" # OpenPLC
+      - "502:502"   # Modbus TCP
+    volumes:
+      - ./openplc_data:/data
+    networks:
+      - factory_network
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    restart: unless-stopped
+    ports:
+      - "1880:1880"
+    environment:
+      - TZ=Europe/Warsaw
+    volumes:
+      - ./nodered_data:/data
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    networks:
+      - factory_network
+
+networks:
+  factory_network:
+    driver: bridge

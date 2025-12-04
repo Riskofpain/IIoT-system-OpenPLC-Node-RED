@@ -1,0 +1,657 @@
+[
+    {
+        "id": "88fd3eae1e1d6e93",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3522306d7d107953",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4dce34764b3696d7",
+        "type": "OPCUA-IIoT-Connector",
+        "discoveryUrl": "",
+        "endpoint": "opc.tcp://virtual-robot:4840/freeopcua/server/",
+        "endpointMustExist": true,
+        "keepSessionAlive": true,
+        "loginEnabled": false,
+        "name": "Robot Python",
+        "showErrors": false,
+        "securityPolicy": "None",
+        "securityMode": "None",
+        "individualCerts": false,
+        "publicCertificateFile": "",
+        "privateKeyFile": "",
+        "defaultSecureTokenLifetime": "",
+        "autoSelectRightEndpoint": false,
+        "strategyMaxRetry": "",
+        "strategyInitialDelay": "",
+        "strategyMaxDelay": "",
+        "strategyRandomisationFactor": "",
+        "requestedSessionTimeout": "",
+        "connectionStartDelay": "",
+        "reconnectDelay": "",
+        "maxBadSessionRequests": 10
+    },
+    {
+        "id": "5170eea6a0af0ed5",
+        "type": "mqtt-broker",
+        "name": "fabryka/robot1/dane",
+        "broker": "mosquitto",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "32610d1a87dee2e9",
+        "type": "influxdb",
+        "hostname": "influxdb",
+        "port": 8086,
+        "protocol": "http",
+        "database": "robotics_data",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "287b2ab0c29d42bb",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "industrial_plc",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "9822ae59b8d7e6c2",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "418583fb59b44a1a",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "88b02b24848e0304",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "9822ae59b8d7e6c2",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "418583fb59b44a1a",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "8b1f30943cb8712c",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "88b02b24848e0304",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
+        "id": "dfb8210581654df7",
+        "type": "ui-page",
+        "name": "Fabryka",
+        "ui": "9822ae59b8d7e6c2",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "418583fb59b44a1a",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "7eaec713a93b88d5",
+        "type": "ui-group",
+        "name": "Silnik Główny",
+        "page": "dfb8210581654df7",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6e6b422be2dda405",
+        "type": "mqtt in",
+        "z": "88fd3eae1e1d6e93",
+        "name": "",
+        "topic": "fabryka/robot1/dane",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "5170eea6a0af0ed5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 670,
+        "y": 180,
+        "wires": [
+            [
+                "e8d52dc37f9d69b9"
+            ]
+        ]
+    },
+    {
+        "id": "13d011595f573104",
+        "type": "debug",
+        "z": "88fd3eae1e1d6e93",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e8d52dc37f9d69b9",
+        "type": "function",
+        "z": "88fd3eae1e1d6e93",
+        "name": "function 1",
+        "func": "\nvar value = msg.payload;\n\n\nif (typeof msg.payload === 'object' && msg.payload !== null && 'value' in msg.payload) {\n    value = msg.payload.value;\n}\n\n// Wiadomość dla InfluxDB\nmsg.payload = value; // Sama wartość (np. 45.5)\n\n msg.measurement = \"temperatura_silnika\"; \n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 340,
+        "wires": [
+            [
+                "13d011595f573104",
+                "4f581f59fffec12f"
+            ]
+        ]
+    },
+    {
+        "id": "4f581f59fffec12f",
+        "type": "influxdb out",
+        "z": "88fd3eae1e1d6e93",
+        "influxdb": "32610d1a87dee2e9",
+        "name": "",
+        "measurement": "temperatura",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1200,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5cd157eaecaace3b",
+        "type": "modbus-write",
+        "z": "3522306d7d107953",
+        "name": "START",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "server": "287b2ab0c29d42bb",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1060,
+        "y": 300,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e57719ee9e298c11",
+        "type": "modbus-write",
+        "z": "3522306d7d107953",
+        "name": "Wciśnij STOP",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "2",
+        "quantity": "1",
+        "server": "287b2ab0c29d42bb",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1060,
+        "y": 480,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "25a265faf3a92b8e",
+        "type": "modbus-read",
+        "z": "3522306d7d107953",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": false,
+        "startDelayTime": "",
+        "server": "287b2ab0c29d42bb",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 850,
+        "y": 820,
+        "wires": [
+            [
+                "a1d2c7ae65a8f5d8",
+                "f43df6bdc436114c",
+                "79f5d825f53a008e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f9518163c02b3b23",
+        "type": "trigger",
+        "z": "3522306d7d107953",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 840,
+        "y": 380,
+        "wires": [
+            [
+                "5cd157eaecaace3b"
+            ]
+        ]
+    },
+    {
+        "id": "5df00d53b10e4e4d",
+        "type": "trigger",
+        "z": "3522306d7d107953",
+        "name": "",
+        "op1": "true",
+        "op2": "false",
+        "op1type": "bool",
+        "op2type": "bool",
+        "duration": "250",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 840,
+        "y": 660,
+        "wires": [
+            [
+                "e57719ee9e298c11"
+            ]
+        ]
+    },
+    {
+        "id": "4a18d5fcc1a9e4f1",
+        "type": "ui-button",
+        "z": "3522306d7d107953",
+        "group": "7eaec713a93b88d5",
+        "name": "",
+        "label": "START",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 720,
+        "y": 100,
+        "wires": [
+            [
+                "f9518163c02b3b23"
+            ]
+        ]
+    },
+    {
+        "id": "ffad12e998f2cbf8",
+        "type": "ui-button",
+        "z": "3522306d7d107953",
+        "group": "7eaec713a93b88d5",
+        "name": "",
+        "label": "STOP",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 630,
+        "y": 440,
+        "wires": [
+            [
+                "5df00d53b10e4e4d"
+            ]
+        ]
+    },
+    {
+        "id": "93bacb22eadb1fd7",
+        "type": "ui-template",
+        "z": "3522306d7d107953",
+        "group": "7eaec713a93b88d5",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<div style=\"display: flex; justify-content: space-between; align-items: center; padding: 10px;\">\n    <span style=\"font-size: 16px;\">Stan Maszyny:</span>\n    <span style=\"font-weight: bold; font-size: 18px;\">\n        {{msg.payload}}\n    </span>\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1220,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1d2c7ae65a8f5d8",
+        "type": "function",
+        "z": "3522306d7d107953",
+        "name": "function 2",
+        "func": "// Pobieramy stan silnika\nvar stan = msg.payload[0];\n\n// Sprawdzamy \"czy to prawda?\" (działa dla true, 1, \"true\", itp.)\nif (stan) {\n    msg.payload = \"URUCHOMIONY 🟢\";\n} else {\n    msg.payload = \"ZATRZYMANY 🔴\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 920,
+        "wires": [
+            [
+                "93bacb22eadb1fd7"
+            ]
+        ]
+    },
+    {
+        "id": "f43df6bdc436114c",
+        "type": "debug",
+        "z": "3522306d7d107953",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "79f5d825f53a008e",
+        "type": "change",
+        "z": "3522306d7d107953",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1460,
+        "y": 900,
+        "wires": [
+            [
+                "2dc0896bd2e7cdcd"
+            ]
+        ]
+    },
+    {
+        "id": "2dc0896bd2e7cdcd",
+        "type": "ui-template",
+        "z": "3522306d7d107953",
+        "group": "7eaec713a93b88d5",
+        "page": "",
+        "ui": "",
+        "name": "Digital Twin",
+        "order": 0,
+        "width": "6",
+        "height": "4",
+        "head": "",
+        "format": "<div style=\"display: flex; justify-content: center; align-items: center; height: 100%; background: #e0e0e0; border-radius: 8px; overflow: hidden;\">\n    \n    <div class=\"fan-assembly\" :class=\"{ spinning: msg.payload === true }\">\n        <div class=\"hub\"></div>\n        <div class=\"blade b1\"></div>\n        <div class=\"blade b2\"></div>\n        <div class=\"blade b3\"></div>\n    </div>\n\n</div>\n\n<style>\n    .fan-assembly {\n        position: relative;\n        width: 120px;\n        height: 120px;\n        transition: all 1s ease-out; /* Płynne zatrzymywanie */\n    }\n\n    .hub {\n        position: absolute;\n        top: 50%; left: 50%;\n        width: 15px; height: 15px;\n        background: #222;\n        border-radius: 50%;\n        transform: translate(-50%, -50%);\n        z-index: 2;\n    }\n\n    .blade {\n        position: absolute;\n        top: 50%; left: 50%;\n        width: 50px; height: 12px;\n        background: linear-gradient(to right, #333, #666);\n        border-radius: 50% 10% 50% 10%;\n        transform-origin: 5px 50%; /* Oś obrotu przy piaście */\n    }\n\n    /* Rozstawienie łopatek co 120 stopni */\n    .b1 { transform: translateY(-50%) rotate(0deg); }\n    .b2 { transform: translateY(-50%) rotate(120deg); }\n    .b3 { transform: translateY(-50%) rotate(240deg); }\n\n    /* Definicja animacji */\n    @keyframes spin {\n        100% { transform: rotate(360deg); }\n    }\n\n    /* Klasa, która uruchamia kręcenie */\n    .spinning {\n        animation: spin 0.5s linear infinite;\n    }\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1830,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    }
+]

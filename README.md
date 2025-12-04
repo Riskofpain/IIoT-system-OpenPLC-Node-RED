@@ -7,7 +7,7 @@ This project implements a complete **Industrial IoT (IIoT)** ecosystem utilizing
 The system is fully containerized using Docker, simulating a modern Industry 4.0 architecture where IT and OT systems converge.
 
 ![Dashboard Visualization](images/dashboard_running.png)
-*Figure 1: Node-RED HMI showing the system in RUN state with the active Digital Twin.*
+*Node-RED HMI showing the system in RUN state with the active Digital Twin.*
 
 ### Key Engineering Concepts
 * **IEC 61131-3 Programming:** Ladder Logic implementation of a latching circuit with Stop-Dominant safety logic.

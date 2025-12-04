@@ -6,6 +6,9 @@ This project implements a complete **Industrial IoT (IIoT)** ecosystem utilizing
 
 The system is fully containerized using Docker, simulating a modern Industry 4.0 architecture where IT and OT systems converge.
 
+![Dashboard Visualization](images/dashboard_running.png)
+*Figure 1: Node-RED HMI showing the system in RUN state with the active Digital Twin.*
+
 ### Key Engineering Concepts
 * **IEC 61131-3 Programming:** Ladder Logic implementation of a latching circuit with Stop-Dominant safety logic.
 * **Industrial Communication:** Modbus TCP (Client/Server architecture) handling real-time I/O.
@@ -55,7 +58,9 @@ graph LR
     -   Visualizes machine state using a custom Dashboard 2.0 interface.
         
     -   Renders the 3D Fan Digital Twin based on live boolean data.
-        
+
+![Node-RED Flow](images/nodered_flow.png)
+*Figure 2: Node-RED data flow processing Modbus signals.*
 
 ----------
 
@@ -64,6 +69,9 @@ graph LR
 ### PLC Logic (IEC 61131-3)
 
 The logic ensures the motor stays running after the Start button is released (Latching) and stops immediately if the Stop button is pressed (Safety).
+
+![PLC Ladder Logic](images/plc_ladder.png)
+*Figure 3: Ladder Diagram showing the latching circuit implementation in OpenPLC.*
 
 **Source Code (`Projekt_StartStop.st`):**
 

@@ -72,7 +72,8 @@ graph LR
 The logic ensures the motor stays running after the Start button is released (Latching) and stops immediately if the Stop button is pressed (Safety).
 
 ![PLC Ladder Logic](images/plc_ladder.png)
-*Figure 3: Ladder Diagram showing the latching circuit implementation in OpenPLC.*
+
+*Ladder Diagram showing the latching circuit implementation in OpenPLC.*
 
 **Source Code (`Projekt_StartStop.st`):**
 

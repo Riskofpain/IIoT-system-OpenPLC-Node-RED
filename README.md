@@ -60,7 +60,8 @@ graph LR
     -   Renders the 3D Fan Digital Twin based on live boolean data.
 
 ![Node-RED Flow](images/nodered_flow.png)
-*Figure 2: Node-RED data flow processing Modbus signals.*
+
+*Node-RED data flow processing Modbus signals.*
 
 ----------
 
